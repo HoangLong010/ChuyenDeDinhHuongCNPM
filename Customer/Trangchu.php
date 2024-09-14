@@ -38,7 +38,7 @@
         <a href="Trangchu.php" class="logo">
            
             <span class="logo2">Shop</span></a>
-        <a href="Trangchu.php">Trang Chủ</a>
+        <a href="Trangchu.php">Trang Chủ 1 </a>
         <a href="introduce.php">Giới Thiệu</a>
         <a href="tel: 0963543864">Liên Hệ</a>
 
