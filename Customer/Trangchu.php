@@ -39,7 +39,7 @@
            
             <span class="logo2">Shop</span></a>
         <a href="Trangchu.php">Trang Chủ2 </a>
-        <a href="introduce.php">Giới Thiệu</a>
+        <a href="introduce.php">Giới Thiệu 123</a>
         <a href="tel: 0963543864">Liên Hệ</a>
 
         <a href="javascript:void(0);"
