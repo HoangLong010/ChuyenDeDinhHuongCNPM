@@ -1,6 +1,6 @@
 <?php
-    require_once 'function.php';
-    session_start();
+require_once 'function.php';
+session_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,24 +45,22 @@
                 <span class="logo2">Shop</span></a>
             <a href="Trangchu.php">Trang Chủ2 </a>
             <a href="introduce.php">Giới Thiệu 123</a>
-            <a href="tel: 0963543864">Liên Hệ 555555</a>
+            <a href="tel: 0963543864">Liên Hệ huyen</a>
 
             <a href="javascript:void(0);" style="font-size:19px;" class="icon" onclick="myFunction()">&#9776;</a>
 
             <?php
-        if (isset($_SESSION['account']) or isset($_SESSION['avatar']))
-        {
-            $prfuser = prf_user($_SESSION['id_kh']);
-            $prf = mysqli_fetch_array($prfuser);
-            $anhdd = $prf['avatar'];
-            echo "<a class='regis_log' href='profile_user.php'>
-                  <img src='../Images/$anhdd' alt=''>"."
-                  <font style='color: bisque'>".$_SESSION['account']."</font></a>";
-        }else
-        {
+            if (isset($_SESSION['account']) or isset($_SESSION['avatar'])) {
+                $prfuser = prf_user($_SESSION['id_kh']);
+                $prf = mysqli_fetch_array($prfuser);
+                $anhdd = $prf['avatar'];
+                echo "<a class='regis_log' href='profile_user.php'>
+                  <img src='../Images/$anhdd' alt=''>" . "
+                  <font style='color: bisque'>" . $_SESSION['account'] . "</font></a>";
+            } else {
             ?>
-            <a href="register.php" class="regis_log"><span class="fa fa-user-plus"></span> Đăng Ký</a>
-            <a class="regis_log" href="login.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a>
+                <a href="register.php" class="regis_log"><span class="fa fa-user-plus"></span> Đăng Ký</a>
+                <a class="regis_log" href="login.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a>
             <?php } ?>
             <a href="cart.php" class="regis_log">
                 <i class="fa fa-cart-plus"></i>
@@ -127,27 +125,25 @@
         <div class="row logos">
             <?php
             $dsdmsp = ds_dmsp();
-            while ($num = mysqli_fetch_array($dsdmsp))
-            {
-        ?>
-            <a href="view_product_category.php?idxem=<?php echo $num['id_dmsp'];?>">
-                <img src="../Images/<?php echo $num['logo_dmsp'];?>" alt="s2">
-            </a>
+            while ($num = mysqli_fetch_array($dsdmsp)) {
+            ?>
+                <a href="view_product_category.php?idxem=<?php echo $num['id_dmsp']; ?>">
+                    <img src="../Images/<?php echo $num['logo_dmsp']; ?>" alt="s2">
+                </a>
             <?php    }
-        ?>
+            ?>
             <input class="toggle-box" id="identifier-1" type="checkbox">
             <label for="identifier-1">Xem thêm</label>
             <div class="logo_sp">
                 <?php
-            $dsdmsp_nine = ds_dmsp_nine();
-            while ($num1 = mysqli_fetch_array($dsdmsp_nine))
-            {
+                $dsdmsp_nine = ds_dmsp_nine();
+                while ($num1 = mysqli_fetch_array($dsdmsp_nine)) {
                 ?>
-                <a href="view_product_category.php?idxem=<?php echo $num1['id_dmsp'];?>">
-                    <img src="../Images/<?php echo $num1['logo_dmsp'];?>" alt="s2">
-                </a>
+                    <a href="view_product_category.php?idxem=<?php echo $num1['id_dmsp']; ?>">
+                        <img src="../Images/<?php echo $num1['logo_dmsp']; ?>" alt="s2">
+                    </a>
                 <?php    }
-            ?>
+                ?>
             </div>
         </div>
 
@@ -162,58 +158,56 @@
                             <div class="row">
                                 <?php
                                 $dtnb = dt_noibat();
-                                while ($num2 = mysqli_fetch_array($dtnb))
-                            { ?>
-                                <div class="products">
-                                    <div class="col-md-3 col-sm-6 items">
-                                        <a href="product_details.php?IDSP=<?php echo $num2['id_sp'];?>">
-                                            <div class="item-description">
-                                                <figure>
-                                                    <img src="../Images/<?php echo $num2['anh_sp'];?>"
-                                                        class="item-img animate" alt="Sản phẩm 1" width="310"
-                                                        height="450">
-                                                </figure>
-                                                <div class="pmh-view">
-                                                    <p class="pmh-title">Giảm còn</p>
-                                                    <p class="pmh-content"><?php echo $num2['gia_km'];?> <u>đ</u></p>
+                                while ($num2 = mysqli_fetch_array($dtnb)) { ?>
+                                    <div class="products">
+                                        <div class="col-md-3 col-sm-6 items">
+                                            <a href="product_details.php?IDSP=<?php echo $num2['id_sp']; ?>">
+                                                <div class="item-description">
+                                                    <figure>
+                                                        <img src="../Images/<?php echo $num2['anh_sp']; ?>"
+                                                            class="item-img animate" alt="Sản phẩm 1" width="310"
+                                                            height="450">
+                                                    </figure>
+                                                    <div class="pmh-view">
+                                                        <p class="pmh-title">Giảm còn</p>
+                                                        <p class="pmh-content"><?php echo $num2['gia_km']; ?> <u>đ</u></p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="text-content">
-                                                <h5><?php echo $num2['ten_sp'];?></h5>
-                                            </div>
-                                        </a>
+                                                <div class="text-content">
+                                                    <h5><?php echo $num2['ten_sp']; ?></h5>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                                 <?php }
-                            ?>
+                                ?>
                             </div>
                         </div>
                         <div class="item">
                             <div class="row">
                                 <?php
                                 $dtnb_five = dt_noibat_five();
-                                while ($num3 = mysqli_fetch_array($dtnb_five))
-                                { ?>
-                                <div class="products">
-                                    <div class="col-md-3 col-sm-6 items">
-                                        <a href="product_details.php?IDSP=<?php echo $num3['id_sp'];?>">
-                                            <div class="item-description">
-                                                <figure>
-                                                    <img src="../Images/<?php echo $num3['anh_sp'];?>"
-                                                        class="item-img animate" alt="Sản phẩm 1" width="310"
-                                                        height="450">
-                                                </figure>
-                                                <div class="pmh-view">
-                                                    <p class="pmh-title">Giảm còn</p>
-                                                    <p class="pmh-content"><?php echo $num3['gia_km'];?> <u>đ</u></p>
+                                while ($num3 = mysqli_fetch_array($dtnb_five)) { ?>
+                                    <div class="products">
+                                        <div class="col-md-3 col-sm-6 items">
+                                            <a href="product_details.php?IDSP=<?php echo $num3['id_sp']; ?>">
+                                                <div class="item-description">
+                                                    <figure>
+                                                        <img src="../Images/<?php echo $num3['anh_sp']; ?>"
+                                                            class="item-img animate" alt="Sản phẩm 1" width="310"
+                                                            height="450">
+                                                    </figure>
+                                                    <div class="pmh-view">
+                                                        <p class="pmh-title">Giảm còn</p>
+                                                        <p class="pmh-content"><?php echo $num3['gia_km']; ?> <u>đ</u></p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="text-content">
-                                                <h5><?php echo $num3['ten_sp'];?></h5>
-                                            </div>
-                                        </a>
+                                                <div class="text-content">
+                                                    <h5><?php echo $num3['ten_sp']; ?></h5>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                                 <?php }
                                 ?>
                             </div>
@@ -229,42 +223,40 @@
         <!------DS Điện thoai---->
         <?php
         $ds_hang = ds_dmsps();
-        while ($num4 = mysqli_fetch_array($ds_hang))
-        {
-    ?>
-        <div class="row">
-            <h3 class="theloai"><?php echo $num4['ten_dmsp'];?></h3>
-            <?php
-                    $dt_hang = dt_dmsp($num4['id_dmsp']);
-                    while ($num5 = mysqli_fetch_array($dt_hang))
-                    {
+        while ($num4 = mysqli_fetch_array($ds_hang)) {
+        ?>
+            <div class="row">
+                <h3 class="theloai"><?php echo $num4['ten_dmsp']; ?></h3>
+                <?php
+                $dt_hang = dt_dmsp($num4['id_dmsp']);
+                while ($num5 = mysqli_fetch_array($dt_hang)) {
                 ?>
-            <div class="products">
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center items">
-                    <a href="product_details.php?IDSP=<?php echo $num5['id_sp'];?>">
-                        <div class="item-description">
-                            <figure>
-                                <img src="../Images/<?php echo $num5['anh_sp'];?>" class="item-img animate"
-                                    alt="Sản phẩm 1">
-                            </figure>
-                            <hr>
-                            <div class="text-content">
-                                <h5><?php echo $num5['ten_sp'];?></h5>
-                                <h5>
-                                    <span><?php echo number_format($num5['gia_km'],0,',','.');?>&nbsp;đ</span>
-                                    <small><?php echo number_format($num5['gia_sp'],0,',','.');?>&nbsp;đ</small>
-                                </h5>
-                            </div>
+                    <div class="products">
+                        <div class="col-lg-3 col-md-3 col-sm-6 text-center items">
+                            <a href="product_details.php?IDSP=<?php echo $num5['id_sp']; ?>">
+                                <div class="item-description">
+                                    <figure>
+                                        <img src="../Images/<?php echo $num5['anh_sp']; ?>" class="item-img animate"
+                                            alt="Sản phẩm 1">
+                                    </figure>
+                                    <hr>
+                                    <div class="text-content">
+                                        <h5><?php echo $num5['ten_sp']; ?></h5>
+                                        <h5>
+                                            <span><?php echo number_format($num5['gia_km'], 0, ',', '.'); ?>&nbsp;đ</span>
+                                            <small><?php echo number_format($num5['gia_sp'], 0, ',', '.'); ?>&nbsp;đ</small>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <?php } ?>
+                    </div>
+                <?php } ?>
 
-            <a href="view_product_category.php?idxem=<?php echo $num4['id_dmsp'];?>" class="col-md-12 viewall">
-                <div class="view-all text-danger">Xem thêm điện thoại</div>
-            </a>
-        </div>
+                <a href="view_product_category.php?idxem=<?php echo $num4['id_dmsp']; ?>" class="col-md-12 viewall">
+                    <div class="view-all text-danger">Xem thêm điện thoại</div>
+                </a>
+            </div>
         <?php  } ?>
     </div>
 
