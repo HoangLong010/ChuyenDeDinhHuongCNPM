@@ -43,9 +43,9 @@
             <a href="Trangchu.php" class="logo">
 
                 <span class="logo2">Shop</span></a>
-            <a href="Trangchu.php">Trang Chủ2 </a>
-            <a href="introduce.php">Giới Thiệu 123</a>
-            <a href="tel: 0963543864">Liên Hệ 555555</a>
+            <a href="Trangchu.php">Trang Chủ</a>
+            <a href="introduce.php">Giới Thiệu</a>
+A            <a href="tel: 0963543864">Liên Hệ </a>
 
             <a href="javascript:void(0);" style="font-size:19px;" class="icon" onclick="myFunction()">&#9776;</a>
 
