@@ -37,17 +37,18 @@ session_start();
             <!--        <span class="topp"><a href="#">Bảo hành tận nơi</a></span>-->
         </div>
     </div>
-    <!-- Header -->
-    <div class="row header">
-        <div class="topnav" id="myTopnav" style="position:">
-            <a href="Trangchu.php" class="logo">
-
-                <span class="logo2">Shop</span></a>
-            <a href="Trangchu.php">Trang Chủ</a>
-            <a href="introduce.php">Giới Thiệu 12121</a>
-A            <a href="tel: 0963543864">Liên Hệ </a>
-
-            <a href="javascript:void(0);" style="font-size:19px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+<!-- Header -->
+<div class="row header">
+    <div class="topnav" id="myTopnav" 
+    style="position:">
+        <a href="Trangchu.php" class="logo">
+           
+            <span class="logo2">Shop</span></a>
+        <a href="Trangchu.php">Trang Chủ</a>
+        <a href="introduce.php">Giới Thiệu</a>
+        <a href="tel: 0963543864">Liên Hệ</a>
+        <a href="javascript:void(0);" style="font-size:19px;" class="icon" onclick="myFunction()">&#9776;</a>
 
             <?php
             if (isset($_SESSION['account']) or isset($_SESSION['avatar'])) {
