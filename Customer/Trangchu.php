@@ -43,15 +43,9 @@ session_start();
             <a href="Trangchu.php" class="logo">
 
                 <span class="logo2">Shop</span></a>
-<<<<<<< HEAD
             <a href="Trangchu.php">Trang Chủ</a>
-            <a href="introduce.php">Giới Thiệu</a>
+            <a href="introduce.php">Giới Thiệu 12121</a>
 A            <a href="tel: 0963543864">Liên Hệ </a>
-=======
-            <a href="Trangchu.php">Trang Chủ2 </a>
-            <a href="introduce.php">Giới Thiệu 123</a>
-            <a href="tel: 0963543864">Liên Hệ huyen</a>
->>>>>>> a4e332f35ae869bfc3122517df3a9a876d60342e
 
             <a href="javascript:void(0);" style="font-size:19px;" class="icon" onclick="myFunction()">&#9776;</a>
 
